@@ -1,0 +1,87 @@
+---
+title: "Callout"
+---
+
+## Callout
+
+- Quarto에서 애용하는 패턴 중 하나이다. 
+- **특정 문장을 강조하고 싶을 때 사용한다.**
+- 아래 것을 복붙해서 쓰자
+
+``` markdown
+::: {.callout-tip title = "tip" appearance = "simple"}            
+애옹
+:::
+
+::: {.callout-warning title = "warning" appearance = "simple"}            
+애옹
+:::
+```
+
+- XXX:                       --- `"note"`, **`"warning"`**, `"important"`, **`"tip"`**, `"caution"`
+- collapse:                  --- 접을지 (`"true"`, `"false"`)
+- title:                     --- **제목**
+- appearance:                --- 디자인 (`"default"`, **`"simple"`**, `"minimal"`)
+- icon:                      --- 아이콘 (**`"true"`**, `"false"`)
+
+### XXX
+
+- 원래는 Type이 더 적합한 설명 같다. 
+- 뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.
+- `note`: 파랑, `warning`: 주황, `important`: 빨강, `tip`: 초록, `caution`: 노랑
+- 취향에 따라 다르지만 `tip`과 `warning`을 권장.
+
+### Collapse
+
+- `collapse`에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다. 
+- 상황에 따라 접을 수 있도록 하고 싶을 때는 `collapse="true"` 또는 `collapse="false"`를 지정한다.
+- 문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)
+
+::: {.callout-tip title="collapse false" collapse="false"}
+애옹
+:::
+
+::: {.callout-tip title="collapse NONE"}
+애옹
+:::
+
+
+### title
+
+- 제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.
+
+::: {.callout-warning title="제목" appearance="simple"}
+애옹
+:::
+
+::: {.callout-warning appearance="simple"}
+애옹
+:::
+
+### appearance
+
+- `default`: 기본 값
+- `simple`: 헤더를 없엔 디자인
+- `minimal`: 아이콘과 헤더를 없앤 디자인
+
+- `simple`을 권장
+
+::: {.callout-tip title="default" appearance="default"}
+애옹
+:::
+
+::: {.callout-tip title="default & icon = false" appearance="default" icon="false"}
+애옹 
+:::
+
+::: {.callout-tip title="simple" appearance="simple"}
+애옹
+:::
+
+::: {.callout-tip title="minimal" appearance="minimal"}
+애옹
+:::
+
+### icon
+
+- 기본값은 `true`니까 건드리지 말자

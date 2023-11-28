@@ -1,0 +1,8 @@
+---
+title: "소개"
+---
+지극히 개인적인 취향을 반영한 R / Shiny / Quarto 디자인 패턴 저장소
+
+jinhwan@zarathu.com
+
+All rights reserved by Jinhwan Kim

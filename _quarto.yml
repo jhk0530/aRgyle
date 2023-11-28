@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "aRgyle"
+  author: "Jinhwan Kim"
+  date: today
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: "Shiny"
+      chapters: 
+        - a.qmd
+    - part: "R"
+      chapters: 
+        - b.qmd
+    - part: "Quarto"
+      chapters: 
+        - callout.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+
+callout-appearance: simple

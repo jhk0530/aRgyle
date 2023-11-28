@@ -1,0 +1,73 @@
+[
+  {
+    "objectID": "intro.html#아가일-패턴",
+    "href": "intro.html#아가일-패턴",
+    "title": "2  Why Design Pattern",
+    "section": "2.1 아가일 패턴?",
+    "text": "2.1 아가일 패턴?\n\n\n\n\n위키에 따르면, 아가일 패턴은 마름모 꼴을 연속적으로 배치한 패턴이라고 한다.\n문서에서 다루고자하는 “Shiny” 디자인 패턴과 연관이 있는 것은 아니지만, (패션) 디자인 패턴하면 떠오르기도 하고 그냥 있어보여서 문서의 이름으로 정했다.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#디자인-패턴이란",
+    "href": "intro.html#디자인-패턴이란",
+    "title": "2  Why Design Pattern",
+    "section": "2.2 디자인 패턴이란?",
+    "text": "2.2 디자인 패턴이란?\n\n이 문서에서의 디자인 패턴 (Design Pattern)이란, Shiny 개발에 있어서 자주 등장하는 상황에서 효과적인 코드 모음 정도로 정의하겠다.\n당연히 개발에 정답은 없지만, Shiny를 깎아가다보면 특정 상황에서 더욱 효과적인 예시들이 있기에 이를 정리하여 궁극적으로는 Shiny 개발에 유지보수와 재사용성, 확장성 등 온갖 좋은 것들을 이 문서를 참고하여 누리기 위함이다.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#왜-shiny-디자인-패턴인가",
+    "href": "intro.html#왜-shiny-디자인-패턴인가",
+    "title": "2  Why Design Pattern",
+    "section": "2.3 왜 Shiny 디자인 패턴인가?",
+    "text": "2.3 왜 Shiny 디자인 패턴인가?\n\nShiny는 R에서 근본된 프레임워크인 만큼, 퍼포먼스에 있어서 다른 웹 프레임워크에 비하면 아쉬움이 조금 있다.\n다행히도 Shiny의 사용 환경은 이러한 오버로드가 문제 되는 경우는 많지 않지만, 그래도 때때로 최적화를 위해 몸을 비틀어야하는 순간들도 생긴다.\n보통 JS 기반의 프레임 워크는 싱글통, 팩토리, 옵저버 등. 잘 알려진 디자인 패턴들이 있지만 Shiny는 이러한 디자인 패턴들을 적용할 수 없다는 것이 문제다.\n그래서 보다 못해 내가 개인적으로 사용하면서 아 쩔었다. 싶은 패턴들을 있어보이게 디자인 패턴이라는 이름으로 정리하여 문서로 공유하고자 한다.\n내가 만든 것들로만 구성되어 있으면 좋겠지만 아쉽게도 그러지는 않고, 일부는 내가 만든 것, 일부는 대학원 시절부터 쌓아왔던 자료들을 사용했다.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#왜-quarto-디자인-패턴인가",
+    "href": "intro.html#왜-quarto-디자인-패턴인가",
+    "title": "2  Why Design Pattern",
+    "section": "2.4 왜 Quarto 디자인 패턴인가?",
+    "text": "2.4 왜 Quarto 디자인 패턴인가?\n\nQuarto는 Rmarkdown을 대체하기 위한 차세대 프로젝트로, posit에서 힘을 주어 개발하고 있다.\nRmarkdown에서 파생된 수많은 패키지들의 많은 기능이 추가되고 업데이트 되는 만큼 장점도 많지만 뭔가 정리가 되지 않은 사례가 많다.\n가끔 디자인적으로 혹은 여러가지 사용 과정에서 얻은 경험들을 정리하려고 한다.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#왜-r-디자인-패턴인가",
+    "href": "intro.html#왜-r-디자인-패턴인가",
+    "title": "2  Why Design Pattern",
+    "section": "2.5 왜 R 디자인 패턴인가?",
+    "text": "2.5 왜 R 디자인 패턴인가?\n\n별 의미 없다. 사실 대체로 Shiny와 Quarto를 위한 패턴이다.\n그러나 여전히 Tidyverse를 위시한 데이터 깎기용, 모델링용 (선호하진 않지만) 주요 패턴들이 있고 여러 곳에 좋은 사례들이 저장되어 있지만 찾아보기는 어려워 정리하려고 한다.\n가능하면 Package나 Test 같은 고급 주제에 대해서도 다뤄보려고 노력하겠다.\n\n\n\n\n\n\n\n주의\n\n\n\n\n이 문서에서 다루는 코드 패턴들이 정답은 아니기에 참고만 하길 바란다.\nUI 패턴에 한정하지는 않는다.\n비정기적으로 업데이트 할 예정이다.\n출처가 있는 경우 (Stackoverflow 등) 표기하려고 노력하겠다.\nquarto books의 사용이 익숙하지 않기에 문서의 레이아웃은 계속 바뀔 수 있다.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "aRgyle",
+    "section": "",
+    "text": "지극히 개인적인 취향을 반영한 R / Shiny / Quarto 디자인 패턴 저장소\njinhwan@zarathu.com\nAll rights reserved by Jinhwan Kim",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>소개</span>"
+    ]
+  },
+  {
+    "objectID": "callout.html#callout",
+    "href": "callout.html#callout",
+    "title": "5  Callout",
+    "section": "5.1 Callout",
+    "text": "5.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title = \"tip\" appearance = \"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title = \"warning\" appearance = \"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n5.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n5.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n5.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n5.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n5.1.5 icon\n\n기본값은 true니까 건드리지 말자",
+    "crumbs": [
+      "Quarto",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Callout</span>"
+    ]
+  }
+]
