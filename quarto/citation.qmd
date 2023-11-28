@@ -1,0 +1,95 @@
+---
+title: "Citation"
+---
+
+## Footnote
+
+- 아래 예시를 복붙하여 사용한다.
+
+``` markdown
+이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]
+```
+
+이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]
+
+## Citation
+
+- Quarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.
+- 일반적으로 사용하는 문서의 경우 출처는 `(링크)` 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다. 
+
+- 단계가 조금 복잡하다.
+
+### _quarto.yml 설정
+
+- `_quarto.yml` 파일에 아래와 같이 `references.bib`를 추가한다. (**tab-level: 0**)
+
+``` yaml
+bibliography: references.bib
+```
+
+### references.qmd 파일 작성
+
+- 한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다. 
+
+::: {.callout-warning title="r-efs가 아닌 refs !!" appearance="simple"}            
+아래에서 `#r-efs`를 `#refs`로 바꿔야 한다. 
+
+일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.
+:::
+
+
+``` markdown
+# References {.unnumbered}
+::: {#r-efs}
+:::
+```
+
+### references.bib 파일 작성 
+
+- 아래는 quarto books template에서 제공하는 예시이다.[@creating-a-book]
+
+``` markdown
+@article{knuth84,
+  author = {Knuth, Donald E.},
+  title = {Literate Programming},
+  year = {1984},
+  issue_date = {May 1984},
+  publisher = {Oxford University Press, Inc.},
+  address = {USA},
+  volume = {27},
+  number = {2},
+  issn = {0010-4620},
+  url = {https://doi.org/10.1093/comjnl/27.2.97},
+  doi = {10.1093/comjnl/27.2.97},
+  journal = {Comput. J.},
+  month = may,
+  pages = {97–111},
+  numpages = {15}
+}
+```
+
+- 만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.
+
+``` markdown
+@article{quarto-callout,
+  author = {Quarto},
+  title = {Callout Blocks},
+  year = {2023},
+  url ={https://quarto.org/docs/authoring/callouts.html}
+}
+```
+
+### 원본 qmd 파일에 reference 추가
+
+- 아래와 같이 작성하면 된다.[@footnotes-and-citations]
+
+``` markdown
+## Reference
+
+- Callout Blocks [@quarto-callout]
+```
+
+::: {.callout-tip title="@-tag" appearance="simple"}            
+`"[@quarto-callout]"` 처럼 인용을 할 수 있고, 여기서 표기한 `@` 뒤의 글자는 `references.bib`의 각 항목마다 첫 줄에서 사용된 키워드이다.
+:::
+

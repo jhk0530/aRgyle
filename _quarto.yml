@@ -17,7 +17,8 @@ book:
         - b.qmd
     - part: "Quarto"
       chapters: 
-        - callout.qmd
+        - quarto/callout.qmd
+        - quarto/citation.qmd
     - references.qmd
 
 bibliography: references.bib
