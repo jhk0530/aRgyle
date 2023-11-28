@@ -1,5 +1,15 @@
 [
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "aRgyle",
+    "section": "",
+    "text": "지극히 개인적인 취향을 반영한 R / Shiny / Quarto 디자인 패턴 저장소\njinhwan@zarathu.com\nAll rights reserved by Jinhwan Kim",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>소개</span>"
+    ]
+  },
+  {
     "objectID": "intro.html#아가일-패턴",
     "href": "intro.html#아가일-패턴",
     "title": "2  Why Design Pattern",
@@ -44,27 +54,49 @@
     "href": "intro.html#왜-r-디자인-패턴인가",
     "title": "2  Why Design Pattern",
     "section": "2.5 왜 R 디자인 패턴인가?",
-    "text": "2.5 왜 R 디자인 패턴인가?\n\n별 의미 없다. 사실 대체로 Shiny와 Quarto를 위한 패턴이다.\n그러나 여전히 Tidyverse를 위시한 데이터 깎기용, 모델링용 (선호하진 않지만) 주요 패턴들이 있고 여러 곳에 좋은 사례들이 저장되어 있지만 찾아보기는 어려워 정리하려고 한다.\n가능하면 Package나 Test 같은 고급 주제에 대해서도 다뤄보려고 노력하겠다.\n\n\n\n\n\n\n\n주의\n\n\n\n\n이 문서에서 다루는 코드 패턴들이 정답은 아니기에 참고만 하길 바란다.\nUI 패턴에 한정하지는 않는다.\n비정기적으로 업데이트 할 예정이다.\n출처가 있는 경우 (Stackoverflow 등) 표기하려고 노력하겠다.\nquarto books의 사용이 익숙하지 않기에 문서의 레이아웃은 계속 바뀔 수 있다.",
+    "text": "2.5 왜 R 디자인 패턴인가?\n\n별 의미 없다. 사실 대체로 Shiny와 Quarto를 위한 패턴이다.\n그러나 여전히 Tidyverse를 위시한 데이터 깎기용, 모델링용 (선호하진 않지만) 주요 패턴들이 있고 여러 곳에 좋은 사례들이 저장되어 있지만 찾아보기는 어려워 정리하려고 한다.\n가능하면 Package나 Test 같은 고급 주제에 대해서도 다뤄보려고 노력하겠다.\n\n\n\n\n\n\n\n주의\n\n\n\n이 문서에서 다루는 코드 패턴들이 정답은 아니기에 참고만 하길 바란다.\nUI 패턴에 한정하지는 않는다.\n비정기적으로 업데이트 할 예정이다.\n출처가 있는 경우 (Stackoverflow 등) 표기하려고 노력하겠다.\nquarto books의 사용이 익숙하지 않기에 문서의 레이아웃은 계속 바뀔 수 있다.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "aRgyle",
-    "section": "",
-    "text": "지극히 개인적인 취향을 반영한 R / Shiny / Quarto 디자인 패턴 저장소\njinhwan@zarathu.com\nAll rights reserved by Jinhwan Kim",
+    "objectID": "callout.html#callout",
+    "href": "callout.html#callout",
+    "title": "5  Callout Blocks",
+    "section": "5.1 Callout",
+    "text": "5.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title=\"tip\" appearance=\"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title=\"warning\" appearance=\"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n5.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n5.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n5.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n5.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n5.1.5 icon\n\n기본값은 true니까 건드리지 말자",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>소개</span>"
+      "Quarto",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Callout</span>"
     ]
   },
   {
-    "objectID": "callout.html#callout",
-    "href": "callout.html#callout",
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Quarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
+    "crumbs": [
+      "References"
+    ]
+  },
+  {
+    "objectID": "callout.html",
+    "href": "callout.html",
     "title": "5  Callout",
-    "section": "5.1 Callout",
-    "text": "5.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title = \"tip\" appearance = \"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title = \"warning\" appearance = \"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n5.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n5.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n5.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n5.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n5.1.5 icon\n\n기본값은 true니까 건드리지 말자",
+    "section": "",
+    "text": "Quarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title=\"tip\" appearance=\"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title=\"warning\" appearance=\"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n5.0.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n5.0.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n5.0.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n5.0.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n5.0.5 icon\n\n기본값은 true니까 건드리지 말자\n\n\n\n5.0.6 Reference\n\nCallout Blocks (Quarto 2023)\n\n\n\n\n\nQuarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
+    "crumbs": [
+      "Quarto",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Callout</span>"
+    ]
+  },
+  {
+    "objectID": "callout.html#reference",
+    "href": "callout.html#reference",
+    "title": "5  Callout Blocks",
+    "section": "5.2 Reference",
+    "text": "5.2 Reference\n\nCallout Blocks (Quarto 2023)\n\n\n\n\n\nQuarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
     "crumbs": [
       "Quarto",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Callout</span>"

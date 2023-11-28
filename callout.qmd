@@ -1,5 +1,5 @@
 ---
-title: "Callout"
+title: "Callout Blocks"
 ---
 
 ## Callout
@@ -9,11 +9,11 @@ title: "Callout"
 - 아래 것을 복붙해서 쓰자
 
 ``` markdown
-::: {.callout-tip title = "tip" appearance = "simple"}            
+::: {.callout-tip title="tip" appearance="simple"}            
 애옹
 :::
 
-::: {.callout-warning title = "warning" appearance = "simple"}            
+::: {.callout-warning title="warning" appearance="simple"}            
 애옹
 :::
 ```
@@ -85,3 +85,7 @@ title: "Callout"
 ### icon
 
 - 기본값은 `true`니까 건드리지 말자
+
+## Reference
+
+- <a href='https://quarto.org/docs/authoring/callouts.html' target="_blank">**Callout Blocks**</a> [@quarto-callout]
