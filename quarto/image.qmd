@@ -1,0 +1,52 @@
+---
+title: "image 배치"
+---
+
+quarto 에서의 이미지 배치는 `<img>` 태그를 사용한다.
+
+`![]`를 사용할 수도 있지만, `![]`는 이미지 크기를 포함해 여러 세밀한 조절이 번거롭다.
+
+## 이미지 크기가 큰 경우
+``` markdown
+<img src='...' width = '100%'>
+```
+
+<img src='/quarto/image/image1.jpg' width = '100%'>
+
+## 이미지 크기가 작은 경우
+
+- `p` 태그를 사용하여 중앙 정렬 이후 크기를 줄인다. (가끔 `text-align`이 아닌 `align`을 사용해야하는 경우도 있다.)
+
+``` markdown
+<p style='text-align:center'>
+  <img src='...' width = '50%'>
+</p>
+```
+
+<p style='text-align:center'>
+  <img src='/quarto/image/image1.jpg' width = '50%'>
+</p>
+
+## 이미지가 여러개 있는 경우
+
+``` markdown
+<p style='text-align:center'>
+  <img src='...' width='49%'>
+  <img src='...' width='49%'>
+</p>
+```
+
+<p style='text-align:center'>
+  <img src='/quarto/image/image1.jpg' width='49%'>
+  <img src='/quarto/image/image2.jpg' width='49%'>
+</p>
+
+::: {.callout-warning title="49%인 이유" appearance="simple"}            
+quarto 에서의 이미지 배치는 margin을 포함하는 경우가 있어 
+50/50 처럼 꽉차게 배치하면 아래 예시처럼 다음줄로 넘어간다. 적절히 여유를 주자.
+:::
+
+<p style='text-align:center'>
+  <img src='/quarto/image/image1.jpg' width='50%'>
+  <img src='/quarto/image/image2.jpg' width='50%'>
+</p>

@@ -60,11 +60,22 @@
     ]
   },
   {
-    "objectID": "shiny/page.html",
-    "href": "shiny/page.html",
+    "objectID": "shiny/page.html#헤더를-설정한-코드",
+    "href": "shiny/page.html#헤더를-설정한-코드",
     "title": "3  Shiny 헤더 커스텀",
-    "section": "",
-    "text": "Shiny 에서의 Favicon과 Title은 설정하는 것이 좋다.\nTitle panel을 사용해도 좋지만 bslib이나 shiny.fluent와 같은 다른 레이아웃을 사용하는 경우 HTML 태그를 이용하여 커스텀 해야한다.\nfavicon에 쓰인 favicon.ico는 app.R과 동일한 디렉토리의 있는 www/ 디렉토리에 위치한다.\n\n\n3.0.1 헤더를 설정하지 않는 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage()\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\n\n\n\n3.0.2 헤더를 설정한 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  tags$head( \n    tags$head(HTML(\"&lt;title&gt;TFL Builder&lt;/title&gt;\")),\n    tags$head(tags$link(rel=\"icon\", href=\"favicon.ico\"))\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\n\n\n\n\n\n\n\n\nFavicon 생성\n\n\n\nFavicon 생성을 위해 무료 서비스를 활용을 권장한다.",
+    "section": "3.1 헤더를 설정한 코드",
+    "text": "3.1 헤더를 설정한 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  tags$head( \n    tags$head(HTML(\"&lt;title&gt;TFL Builder&lt;/title&gt;\")),\n    tags$head(tags$link(rel=\"icon\", href=\"favicon.ico\"))\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "Shiny",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
+    ]
+  },
+  {
+    "objectID": "shiny/page.html#헤더를-설정하지-않는-코드",
+    "href": "shiny/page.html#헤더를-설정하지-않는-코드",
+    "title": "3  Shiny 헤더 커스텀",
+    "section": "3.2 헤더를 설정하지 않는 코드",
+    "text": "3.2 헤더를 설정하지 않는 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage()\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\n\n\n\n\n\n\n\n\nFavicon 생성\n\n\n\nFavicon 생성을 위해 무료 서비스를 활용을 권장한다.",
     "crumbs": [
       "Shiny",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
@@ -93,25 +104,69 @@
     ]
   },
   {
-    "objectID": "quarto/citation.html#footnote",
-    "href": "quarto/citation.html#footnote",
-    "title": "7  Citation",
-    "section": "7.1 Footnote",
-    "text": "7.1 Footnote\n\n아래 예시를 복붙하여 사용한다.\n\n이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]\n이렇게 인라인으로 쓰자1",
+    "objectID": "quarto/scss.html#yaml",
+    "href": "quarto/scss.html#yaml",
+    "title": "7  Custom CSS",
+    "section": "7.1 YAML",
+    "text": "7.1 YAML\n이를 위해 yaml 헤더에 다음과 같이 추가한다\n\ncustoms.scss의 위치는 작성하는 qmd 파일과 동일한 것을 적용한다.\n만약 전체에 일괄적으로 적용하고 싶다면, _quarto.yml에 추가한다. 마찬가지로 위치는 _quarto.yml과 동일해야한다.\n\ntheme:\n  - custom.scss\ncustom.scss의 내용은 아래와 같이 일반 css를 채우면 된다, 이때 반드시 첫째줄의 rules를 추가해야한다.\n/*-- scss:rules --*/\ncode{\n  ...\n}\n\np{\n  ...\n}\n\n\n\n\n\n\nSCSS\n\n\n\n기본 테마를 사용하는 것이 좋고, 기본 테마에서 특정 부분만 수정하고 싶을때 사용하자.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Custom CSS</span>"
+    ]
+  },
+  {
+    "objectID": "quarto/image.html#이미지-크기가-큰-경우",
+    "href": "quarto/image.html#이미지-크기가-큰-경우",
+    "title": "8  image 배치",
+    "section": "8.1 이미지 크기가 큰 경우",
+    "text": "8.1 이미지 크기가 큰 경우\n&lt;img src='...' width = '100%'&gt;",
+    "crumbs": [
+      "Quarto",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>image 배치</span>"
+    ]
+  },
+  {
+    "objectID": "quarto/image.html#이미지-크기가-작은-경우",
+    "href": "quarto/image.html#이미지-크기가-작은-경우",
+    "title": "8  image 배치",
+    "section": "8.2 이미지 크기가 작은 경우",
+    "text": "8.2 이미지 크기가 작은 경우\n\np 태그를 사용하여 중앙 정렬 이후 크기를 줄인다. (가끔 text-align이 아닌 align을 사용해야하는 경우도 있다.)\n\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width = '50%'&gt;\n&lt;/p&gt;",
+    "crumbs": [
+      "Quarto",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>image 배치</span>"
+    ]
+  },
+  {
+    "objectID": "quarto/image.html#이미지가-여러개-있는-경우",
+    "href": "quarto/image.html#이미지가-여러개-있는-경우",
+    "title": "8  image 배치",
+    "section": "8.3 이미지가 여러개 있는 경우",
+    "text": "8.3 이미지가 여러개 있는 경우\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width='49%'&gt;\n  &lt;img src='...' width='49%'&gt;\n&lt;/p&gt;\n\n \n\n\n\n\n\n\n\n49%인 이유\n\n\n\nquarto 에서의 이미지 배치는 margin을 포함하는 경우가 있어 50/50 처럼 꽉차게 배치하면 아래 예시처럼 다음줄로 넘어간다. 적절히 여유를 주자.",
+    "crumbs": [
+      "Quarto",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>image 배치</span>"
+    ]
+  },
+  {
+    "objectID": "quarto/citation.html#footnote",
+    "href": "quarto/citation.html#footnote",
+    "title": "9  Citation",
+    "section": "9.1 Footnote",
+    "text": "9.1 Footnote\n\n아래 예시를 복붙하여 사용한다.\n\n이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]\n이렇게 인라인으로 쓰자1",
+    "crumbs": [
+      "Quarto",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citation</span>"
     ]
   },
   {
     "objectID": "quarto/citation.html#citation",
     "href": "quarto/citation.html#citation",
-    "title": "7  Citation",
-    "section": "7.2 Citation",
-    "text": "7.2 Citation\n\nQuarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.\n일반적으로 사용하는 문서의 경우 출처는 (링크) 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다.\n단계가 조금 복잡하다.\n\n\n7.2.1 _quarto.yml 설정\n\n_quarto.yml 파일에 아래와 같이 references.bib를 추가한다. (tab-level: 0)\n\nbibliography: references.bib\n\n\n7.2.2 references.qmd 파일 작성\n\n한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다.\n\n\n\n\n\n\n\nr-efs가 아닌 refs !!\n\n\n\n아래에서 #r-efs를 #refs로 바꿔야 한다.\n일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.\n\n\n# References {.unnumbered}\n::: {#r-efs}\n:::\n\n\n7.2.3 references.bib 파일 작성\n\n아래는 quarto books template에서 제공하는 예시이다.(Quarto 2023b)\n\n@article{knuth84,\n  author = {Knuth, Donald E.},\n  title = {Literate Programming},\n  year = {1984},\n  issue_date = {May 1984},\n  publisher = {Oxford University Press, Inc.},\n  address = {USA},\n  volume = {27},\n  number = {2},\n  issn = {0010-4620},\n  url = {https://doi.org/10.1093/comjnl/27.2.97},\n  doi = {10.1093/comjnl/27.2.97},\n  journal = {Comput. J.},\n  month = may,\n  pages = {97–111},\n  numpages = {15}\n}\n\n만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.\n\n@article{quarto-callout,\n  author = {Quarto},\n  title = {Callout Blocks},\n  year = {2023},\n  url ={https://quarto.org/docs/authoring/callouts.html}\n}\n\n\n7.2.4 원본 qmd 파일에 reference 추가\n\n아래와 같이 작성하면 된다.(Quarto 2023a)\n\n## Reference\n\n- Callout Blocks [@quarto-callout]\n\n\n\n\n\n\n@-tag\n\n\n\n\"[@quarto-callout]\" 처럼 인용을 할 수 있고, 여기서 표기한 @ 뒤의 글자는 references.bib의 각 항목마다 첫 줄에서 사용된 키워드이다.\n\n\n\n\n\n\nQuarto. 2023a. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023b. “Creating a Book.” https://quarto.org/docs/books/.",
+    "title": "9  Citation",
+    "section": "9.2 Citation",
+    "text": "9.2 Citation\n\nQuarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.\n일반적으로 사용하는 문서의 경우 출처는 (링크) 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다.\n단계가 조금 복잡하다.\n\n\n9.2.1 _quarto.yml 설정\n\n_quarto.yml 파일에 아래와 같이 references.bib를 추가한다. (tab-level: 0)\n\nbibliography: references.bib\n\n\n9.2.2 references.qmd 파일 작성\n\n한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다.\n\n\n\n\n\n\n\nr-efs가 아닌 refs !!\n\n\n\n아래에서 #r-efs를 #refs로 바꿔야 한다.\n일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.\n\n\n# References {.unnumbered}\n::: {#r-efs}\n:::\n\n\n9.2.3 references.bib 파일 작성\n\n아래는 quarto books template에서 제공하는 예시이다.(Quarto 2023b)\n\n@article{knuth84,\n  author = {Knuth, Donald E.},\n  title = {Literate Programming},\n  year = {1984},\n  issue_date = {May 1984},\n  publisher = {Oxford University Press, Inc.},\n  address = {USA},\n  volume = {27},\n  number = {2},\n  issn = {0010-4620},\n  url = {https://doi.org/10.1093/comjnl/27.2.97},\n  doi = {10.1093/comjnl/27.2.97},\n  journal = {Comput. J.},\n  month = may,\n  pages = {97–111},\n  numpages = {15}\n}\n\n만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.\n\n@article{quarto-callout,\n  author = {Quarto},\n  title = {Callout Blocks},\n  year = {2023},\n  url ={https://quarto.org/docs/authoring/callouts.html}\n}\n\n\n9.2.4 원본 qmd 파일에 reference 추가\n\n아래와 같이 작성하면 된다.(Quarto 2023a)\n\n## Reference\n\n- Callout Blocks [@quarto-callout]\n\n\n\n\n\n\n@-tag\n\n\n\n\"[@quarto-callout]\" 처럼 인용을 할 수 있고, 여기서 표기한 @ 뒤의 글자는 references.bib의 각 항목마다 첫 줄에서 사용된 키워드이다.\n\n\n\n\n\n\nQuarto. 2023a. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023b. “Creating a Book.” https://quarto.org/docs/books/.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citation</span>"
     ]
   },
   {
@@ -122,28 +177,6 @@
     "text": "Quarto. 2023a. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.\n\n\n———. 2023b. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023c. “Creating a Book.” https://quarto.org/docs/books/.",
     "crumbs": [
       "References"
-    ]
-  },
-  {
-    "objectID": "shiny/page.html#헤더를-설정하지-않는-코드",
-    "href": "shiny/page.html#헤더를-설정하지-않는-코드",
-    "title": "3  Shiny 헤더 커스텀",
-    "section": "3.2 헤더를 설정하지 않는 코드",
-    "text": "3.2 헤더를 설정하지 않는 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage()\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\n\n\n\n\n\n\n\n\nFavicon 생성\n\n\n\nFavicon 생성을 위해 무료 서비스를 활용을 권장한다.",
-    "crumbs": [
-      "Shiny",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
-    ]
-  },
-  {
-    "objectID": "shiny/page.html#헤더를-설정한-코드",
-    "href": "shiny/page.html#헤더를-설정한-코드",
-    "title": "3  Shiny 헤더 커스텀",
-    "section": "3.1 헤더를 설정한 코드",
-    "text": "3.1 헤더를 설정한 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  tags$head( \n    tags$head(HTML(\"&lt;title&gt;TFL Builder&lt;/title&gt;\")),\n    tags$head(tags$link(rel=\"icon\", href=\"favicon.ico\"))\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)",
-    "crumbs": [
-      "Shiny",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
     ]
   }
 ]

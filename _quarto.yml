@@ -21,15 +21,15 @@ book:
           text: Home
           icon: 0-circle
         #- aria-label: asdf
-        
         #- rel: asdf
         #- target: asdf
     - part: "Quarto"
       chapters: 
         - quarto/callout.qmd
-        - quarto/citation.qmd
-        #- quarto/image center
-        #- quarto/favicon
+        - quarto/scss.qmd
+        - quarto/image.qmd
+        - href: quarto/citation.qmd
+          icon : book-half
         #- quarto blog yml
         #- quarto 에 결제
     
@@ -39,6 +39,8 @@ bibliography: references.bib
 
 format:
   html:
-    theme: flatly # flatly, cosmo, pulse, spacelab, united(ORANGE)
+    theme: 
+    - flatly # flatly, cosmo, pulse, spacelab, united(ORANGE)
+    - custom.scss
 
 callout-appearance: simple

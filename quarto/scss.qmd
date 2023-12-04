@@ -1,0 +1,38 @@
+---
+title: "Custom CSS"
+theme: 
+  - "custom.scss"
+---
+
+Quarto에서 custom 스타일을 적용하는 방법중 하나는 SCSS를 사용하는 것이다.
+
+<a href='https://quarto.org/docs/output-formats/html-themes.html#custom-themes' target = "_blank">참고 링크</a>
+
+## YAML
+
+이를 위해 yaml 헤더에 다음과 같이 추가한다
+
+- `customs.scss`의 위치는 **작성하는 qmd 파일과 동일**한 것을 적용한다. 
+- 만약 전체에 일괄적으로 적용하고 싶다면, `_quarto.yml`에 추가한다. 마찬가지로 위치는 `_quarto.yml`과 동일해야한다. 
+
+``` markdown
+theme:
+  - custom.scss
+```
+
+`custom.scss`의 내용은 아래와 같이 일반 css를 채우면 된다, 이때 **반드시 첫째줄의 rules를 추가**해야한다.
+
+``` scss
+/*-- scss:rules --*/
+code{
+  ...
+}
+
+p{
+  ...
+}
+```
+
+::: {.callout-tip title="SCSS" appearance="simple"}            
+기본 테마를 사용하는 것이 좋고, 기본 테마에서 특정 부분만 수정하고 싶을때 사용하자.
+:::
