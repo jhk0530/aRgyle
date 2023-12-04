@@ -3,6 +3,8 @@ title: "소개"
 ---
 지극히 개인적인 취향을 반영한 R / Shiny / Quarto 디자인 패턴 저장소
 
-jinhwan@zarathu.com
+사용 변형은 자유, 출처는 남길 것.
 
-All rights reserved by Jinhwan Kim
+All rights reserved by Jinhwan Kim 
+
+<iframe src="https://github.com/sponsors/jhk0530/button" title="Sponsor jhk0530" height="32" width="114" style="border: 0; border-radius: 6px;"></iframe>
