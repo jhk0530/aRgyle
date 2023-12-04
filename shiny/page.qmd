@@ -1,0 +1,48 @@
+---
+title: "Shiny 헤더 커스텀"
+---
+
+- Shiny 에서의 Favicon과 Title은 설정하는 것이 좋다.
+- `Title panel`을 사용해도 좋지만 bslib이나 shiny.fluent와 같은 다른 레이아웃을 사용하는 경우 HTML 태그를 이용하여 커스텀 해야한다. 
+- **favicon**에 쓰인 `favicon.ico`는 `app.R`과 동일한 디렉토리의 있는 `www/` 디렉토리에 위치한다.
+
+## 헤더를 설정한 코드
+
+```{r}
+#| eval: false
+
+library(shiny)
+
+ui <- fluidPage(
+  tags$head( 
+    tags$head(HTML("<title>TFL Builder</title>")),
+    tags$head(tags$link(rel="icon", href="favicon.ico"))
+  )
+)
+
+server <- function(input, output, session) {
+}
+
+shinyApp(ui, server)
+```
+
+## 헤더를 설정하지 않는 코드
+
+```{r}
+#| eval: false
+
+library(shiny)
+
+ui <- fluidPage()
+
+server <- function(input, output, session) {
+}
+
+shinyApp(ui, server)
+```
+
+<img src='/shiny/image/page.png' width = '100%'>
+
+::: {.callout-tip title="Favicon 생성" appearance="simple"}            
+Favicon 생성을 위해 <a href='https://www.favicon.software/' target="_blank">무료 서비스</a>를 활용을 권장한다. 
+:::

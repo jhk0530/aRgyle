@@ -11,20 +11,34 @@ book:
     - intro.qmd
     - part: "Shiny"
       chapters: 
-        - a.qmd
+        - shiny/page.qmd
     - part: "R"
       chapters: 
-        - b.qmd
+        - a.qmd
+    - part: "ggplot2"
+      chapters: 
+        - href: b.qmd
+          text: Home
+          icon: 0-circle
+        #- aria-label: asdf
+        
+        #- rel: asdf
+        #- target: asdf
     - part: "Quarto"
       chapters: 
         - quarto/callout.qmd
         - quarto/citation.qmd
+        #- quarto/image center
+        #- quarto/favicon
+        #- quarto blog yml
+        #- quarto 에 결제
+    
     - references.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: flatly # flatly, cosmo, pulse, spacelab, united(ORANGE)
 
 callout-appearance: simple
