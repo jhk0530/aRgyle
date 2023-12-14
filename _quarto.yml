@@ -15,6 +15,9 @@ book:
     - part: "R"
       chapters: 
         - a.qmd
+    - part: "Shiny.fluent"
+      chapters:
+        - shiny.fluent/dropdown.qmd
     - part: "ggplot2"
       chapters: 
         - href: b.qmd

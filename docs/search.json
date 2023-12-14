@@ -82,91 +82,124 @@
     ]
   },
   {
+    "objectID": "shiny.fluent/dropdown.html#dropdown-group-header",
+    "href": "shiny.fluent/dropdown.html#dropdown-group-header",
+    "title": "5  Dropdown Group",
+    "section": "5.1 Dropdown Group Header",
+    "text": "5.1 Dropdown Group Header\nshiny.fluent의 dropdown은 fluent UI에서 가능한 그룹 헤더를 지원하지 않음.\n\n\n\n이를 위해 2가지를 해아한다.\n\n코드를 선언\n\n\nDropdownMenuItemType &lt;- function(type) { # nolint\n  JS(paste0(\"jsmodule['@fluentui/react'].DropdownMenuItemType.\"), type)\n}\n\n\nDropdown에 itemType = DropdownMenuItemType(\"Header\") 추가\n\n\nDropdown.shinyInput(\n  inputId = ns(\"fruit\"),\n  label = \"Searchable Fruit Selector\",\n  multiSelect = TRUE,\n  placeholder = \"Placeholder\",\n  options = list(\n    list(key = \"-\", text = \"Fruits\", itemType = DropdownMenuItemType(\"Header\")),\n    list(key = \"apple\", text = \"Apple\"),\n    list(key = \"banana\", text = \"Banana\"),\n    list(key = \"-\", text = \"Vegetables\", itemType = DropdownMenuItemType(\"Header\")),\n    list(key = \"broccoli\", text = \"Broccoli\"),\n    list(key = \"carrot\", text = \"Carrot\")\n  )\n)",
+    "crumbs": [
+      "Shiny.fluent",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group in shiny.fluent</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.fluent/dropdown.html#minimal-reprex-code",
+    "href": "shiny.fluent/dropdown.html#minimal-reprex-code",
+    "title": "5  Dropdown Group",
+    "section": "5.2 Minimal Reprex Code",
+    "text": "5.2 Minimal Reprex Code\n\nlibrary(shiny)\nlibrary(shiny.fluent)\n\nDropdownMenuItemType &lt;- function(type) { # nolint\n  JS(paste0(\"jsmodule['@fluentui/react'].DropdownMenuItemType.\"), type)\n}\n\nui &lt;- fluentPage(\n  div(\n    style = \"height: 100%; width: 50%; margin:auto\",\n    Dropdown.shinyInput(\n      inputId = \"dropdown\",\n      label = \"Group Selector\",\n      multiSelect = TRUE,\n      placeholder = \"Placeholder\",\n      options = list(\n        list(key = \"-\", text = \"Fruits\", itemType = DropdownMenuItemType(\"Header\")),\n        list(key = \"apple\", text = \"Apple\"),\n        list(key = \"banana\", text = \"Banana\"),\n        list(key = \"-\", text = \"Vegetables\", itemType = DropdownMenuItemType(\"Header\")),\n        list(key = \"broccoli\", text = \"Broccoli\"),\n        list(key = \"carrot\", text = \"Carrot\")\n      )\n    )\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "Shiny.fluent",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group in shiny.fluent</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.fluent/dropdown.html#reference",
+    "href": "shiny.fluent/dropdown.html#reference",
+    "title": "5  Dropdown Group",
+    "section": "5.3 Reference",
+    "text": "5.3 Reference\n\nGotfrid’s gist: searchable_dropdown.R",
+    "crumbs": [
+      "Shiny.fluent",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group in shiny.fluent</span>"
+    ]
+  },
+  {
     "objectID": "quarto/callout.html#callout",
     "href": "quarto/callout.html#callout",
-    "title": "6  Callout Blocks",
-    "section": "6.1 Callout",
-    "text": "6.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title=\"tip\" appearance=\"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title=\"warning\" appearance=\"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n6.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n6.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n6.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n6.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n6.1.5 icon\n\n기본값은 true니까 건드리지 말자",
+    "title": "7  Callout Blocks",
+    "section": "7.1 Callout",
+    "text": "7.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title=\"tip\" appearance=\"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title=\"warning\" appearance=\"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n7.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n7.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n7.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n7.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n7.1.5 icon\n\n기본값은 true니까 건드리지 말자",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Callout Blocks</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Callout Blocks</span>"
     ]
   },
   {
     "objectID": "quarto/callout.html#reference",
     "href": "quarto/callout.html#reference",
-    "title": "6  Callout Blocks",
-    "section": "6.2 Reference",
-    "text": "6.2 Reference\n\nCallout Blocks (Quarto 2023)\n\n\n\n\n\nQuarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
+    "title": "7  Callout Blocks",
+    "section": "7.2 Reference",
+    "text": "7.2 Reference\n\nCallout Blocks (Quarto 2023)\n\n\n\n\n\nQuarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Callout Blocks</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Callout Blocks</span>"
     ]
   },
   {
     "objectID": "quarto/scss.html#yaml",
     "href": "quarto/scss.html#yaml",
-    "title": "7  Custom CSS",
-    "section": "7.1 YAML",
-    "text": "7.1 YAML\n이를 위해 yaml 헤더에 다음과 같이 추가한다\n\ncustoms.scss의 위치는 작성하는 qmd 파일과 동일한 것을 적용한다.\n만약 전체에 일괄적으로 적용하고 싶다면, _quarto.yml에 추가한다. 마찬가지로 위치는 _quarto.yml과 동일해야한다.\n\ntheme:\n  - custom.scss\ncustom.scss의 내용은 아래와 같이 일반 css를 채우면 된다, 이때 반드시 첫째줄의 rules를 추가해야한다.\n/*-- scss:rules --*/\ncode{\n  ...\n}\n\np{\n  ...\n}\n\n\n\n\n\n\nSCSS\n\n\n\n기본 테마를 사용하는 것이 좋고, 기본 테마에서 특정 부분만 수정하고 싶을때 사용하자.",
+    "title": "8  Custom CSS",
+    "section": "8.1 YAML",
+    "text": "8.1 YAML\n이를 위해 yaml 헤더에 다음과 같이 추가한다\n\ncustoms.scss의 위치는 작성하는 qmd 파일과 동일한 것을 적용한다.\n만약 전체에 일괄적으로 적용하고 싶다면, _quarto.yml에 추가한다. 마찬가지로 위치는 _quarto.yml과 동일해야한다.\n\ntheme:\n  - custom.scss\ncustom.scss의 내용은 아래와 같이 일반 css를 채우면 된다, 이때 반드시 첫째줄의 rules를 추가해야한다.\n/*-- scss:rules --*/\ncode{\n  ...\n}\n\np{\n  ...\n}\n\n\n\n\n\n\nSCSS\n\n\n\n기본 테마를 사용하는 것이 좋고, 기본 테마에서 특정 부분만 수정하고 싶을때 사용하자.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Custom CSS</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Custom CSS</span>"
     ]
   },
   {
     "objectID": "quarto/image.html#이미지-크기가-큰-경우",
     "href": "quarto/image.html#이미지-크기가-큰-경우",
-    "title": "8  image 배치",
-    "section": "8.1 이미지 크기가 큰 경우",
-    "text": "8.1 이미지 크기가 큰 경우\n&lt;img src='...' width = '100%'&gt;",
+    "title": "9  image 배치",
+    "section": "9.1 이미지 크기가 큰 경우",
+    "text": "9.1 이미지 크기가 큰 경우\n&lt;img src='...' width = '100%'&gt;",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>image 배치</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>image 배치</span>"
     ]
   },
   {
     "objectID": "quarto/image.html#이미지-크기가-작은-경우",
     "href": "quarto/image.html#이미지-크기가-작은-경우",
-    "title": "8  image 배치",
-    "section": "8.2 이미지 크기가 작은 경우",
-    "text": "8.2 이미지 크기가 작은 경우\n\np 태그를 사용하여 중앙 정렬 이후 크기를 줄인다. (가끔 text-align이 아닌 align을 사용해야하는 경우도 있다.)\n\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width = '50%'&gt;\n&lt;/p&gt;",
+    "title": "9  image 배치",
+    "section": "9.2 이미지 크기가 작은 경우",
+    "text": "9.2 이미지 크기가 작은 경우\n\np 태그를 사용하여 중앙 정렬 이후 크기를 줄인다. (가끔 text-align이 아닌 align을 사용해야하는 경우도 있다.)\n\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width = '50%'&gt;\n&lt;/p&gt;",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>image 배치</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>image 배치</span>"
     ]
   },
   {
     "objectID": "quarto/image.html#이미지가-여러개-있는-경우",
     "href": "quarto/image.html#이미지가-여러개-있는-경우",
-    "title": "8  image 배치",
-    "section": "8.3 이미지가 여러개 있는 경우",
-    "text": "8.3 이미지가 여러개 있는 경우\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width='49%'&gt;\n  &lt;img src='...' width='49%'&gt;\n&lt;/p&gt;\n\n \n\n\n\n\n\n\n\n49%인 이유\n\n\n\nquarto 에서의 이미지 배치는 margin을 포함하는 경우가 있어 50/50 처럼 꽉차게 배치하면 아래 예시처럼 다음줄로 넘어간다. 적절히 여유를 주자.",
+    "title": "9  image 배치",
+    "section": "9.3 이미지가 여러개 있는 경우",
+    "text": "9.3 이미지가 여러개 있는 경우\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width='49%'&gt;\n  &lt;img src='...' width='49%'&gt;\n&lt;/p&gt;\n\n \n\n\n\n\n\n\n\n49%인 이유\n\n\n\nquarto 에서의 이미지 배치는 margin을 포함하는 경우가 있어 50/50 처럼 꽉차게 배치하면 아래 예시처럼 다음줄로 넘어간다. 적절히 여유를 주자.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>image 배치</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>image 배치</span>"
     ]
   },
   {
     "objectID": "quarto/citation.html#footnote",
     "href": "quarto/citation.html#footnote",
-    "title": "9  Citation",
-    "section": "9.1 Footnote",
-    "text": "9.1 Footnote\n\n아래 예시를 복붙하여 사용한다.\n\n이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]\n이렇게 인라인으로 쓰자1",
+    "title": "10  Citation",
+    "section": "10.1 Footnote",
+    "text": "10.1 Footnote\n\n아래 예시를 복붙하여 사용한다.\n\n이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]\n이렇게 인라인으로 쓰자1",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Citation</span>"
     ]
   },
   {
     "objectID": "quarto/citation.html#citation",
     "href": "quarto/citation.html#citation",
-    "title": "9  Citation",
-    "section": "9.2 Citation",
-    "text": "9.2 Citation\n\nQuarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.\n일반적으로 사용하는 문서의 경우 출처는 (링크) 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다.\n단계가 조금 복잡하다.\n\n\n9.2.1 _quarto.yml 설정\n\n_quarto.yml 파일에 아래와 같이 references.bib를 추가한다. (tab-level: 0)\n\nbibliography: references.bib\n\n\n9.2.2 references.qmd 파일 작성\n\n한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다.\n\n\n\n\n\n\n\nr-efs가 아닌 refs !!\n\n\n\n아래에서 #r-efs를 #refs로 바꿔야 한다.\n일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.\n\n\n# References {.unnumbered}\n::: {#r-efs}\n:::\n\n\n9.2.3 references.bib 파일 작성\n\n아래는 quarto books template에서 제공하는 예시이다.(Quarto 2023b)\n\n@article{knuth84,\n  author = {Knuth, Donald E.},\n  title = {Literate Programming},\n  year = {1984},\n  issue_date = {May 1984},\n  publisher = {Oxford University Press, Inc.},\n  address = {USA},\n  volume = {27},\n  number = {2},\n  issn = {0010-4620},\n  url = {https://doi.org/10.1093/comjnl/27.2.97},\n  doi = {10.1093/comjnl/27.2.97},\n  journal = {Comput. J.},\n  month = may,\n  pages = {97–111},\n  numpages = {15}\n}\n\n만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.\n\n@article{quarto-callout,\n  author = {Quarto},\n  title = {Callout Blocks},\n  year = {2023},\n  url ={https://quarto.org/docs/authoring/callouts.html}\n}\n\n\n9.2.4 원본 qmd 파일에 reference 추가\n\n아래와 같이 작성하면 된다.(Quarto 2023a)\n\n## Reference\n\n- Callout Blocks [@quarto-callout]\n\n\n\n\n\n\n@-tag\n\n\n\n\"[@quarto-callout]\" 처럼 인용을 할 수 있고, 여기서 표기한 @ 뒤의 글자는 references.bib의 각 항목마다 첫 줄에서 사용된 키워드이다.\n\n\n\n\n\n\nQuarto. 2023a. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023b. “Creating a Book.” https://quarto.org/docs/books/.",
+    "title": "10  Citation",
+    "section": "10.2 Citation",
+    "text": "10.2 Citation\n\nQuarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.\n일반적으로 사용하는 문서의 경우 출처는 (링크) 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다.\n단계가 조금 복잡하다.\n\n\n10.2.1 _quarto.yml 설정\n\n_quarto.yml 파일에 아래와 같이 references.bib를 추가한다. (tab-level: 0)\n\nbibliography: references.bib\n\n\n10.2.2 references.qmd 파일 작성\n\n한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다.\n\n\n\n\n\n\n\nr-efs가 아닌 refs !!\n\n\n\n아래에서 #r-efs를 #refs로 바꿔야 한다.\n일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.\n\n\n# References {.unnumbered}\n::: {#r-efs}\n:::\n\n\n10.2.3 references.bib 파일 작성\n\n아래는 quarto books template에서 제공하는 예시이다.(Quarto 2023b)\n\n@article{knuth84,\n  author = {Knuth, Donald E.},\n  title = {Literate Programming},\n  year = {1984},\n  issue_date = {May 1984},\n  publisher = {Oxford University Press, Inc.},\n  address = {USA},\n  volume = {27},\n  number = {2},\n  issn = {0010-4620},\n  url = {https://doi.org/10.1093/comjnl/27.2.97},\n  doi = {10.1093/comjnl/27.2.97},\n  journal = {Comput. J.},\n  month = may,\n  pages = {97–111},\n  numpages = {15}\n}\n\n만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.\n\n@article{quarto-callout,\n  author = {Quarto},\n  title = {Callout Blocks},\n  year = {2023},\n  url ={https://quarto.org/docs/authoring/callouts.html}\n}\n\n\n10.2.4 원본 qmd 파일에 reference 추가\n\n아래와 같이 작성하면 된다.(Quarto 2023a)\n\n## Reference\n\n- Callout Blocks [@quarto-callout]\n\n\n\n\n\n\n@-tag\n\n\n\n\"[@quarto-callout]\" 처럼 인용을 할 수 있고, 여기서 표기한 @ 뒤의 글자는 references.bib의 각 항목마다 첫 줄에서 사용된 키워드이다.\n\n\n\n\n\n\nQuarto. 2023a. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023b. “Creating a Book.” https://quarto.org/docs/books/.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Citation</span>"
     ]
   },
   {

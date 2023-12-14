@@ -1,0 +1,88 @@
+---
+title: "Dropdown Group"
+---
+
+## Dropdown Group Header
+
+shiny.fluent의 dropdown은 fluent UI에서 가능한 그룹 헤더를 지원하지 않음.
+
+<p style='text-align:center'>
+  <img src='image/header.png' width = '50%'>
+</p>
+
+이를 위해 2가지를 해아한다.
+
+1. 코드를 선언
+```{r}
+#| eval: false
+DropdownMenuItemType <- function(type) { # nolint
+  JS(paste0("jsmodule['@fluentui/react'].DropdownMenuItemType."), type)
+}
+```
+
+2. Dropdown에 `itemType = DropdownMenuItemType("Header")` 추가
+
+```{r}
+#| eval: false
+Dropdown.shinyInput(
+  inputId = ns("fruit"),
+  label = "Searchable Fruit Selector",
+  multiSelect = TRUE,
+  placeholder = "Placeholder",
+  options = list(
+    list(key = "-", text = "Fruits", itemType = DropdownMenuItemType("Header")),
+    list(key = "apple", text = "Apple"),
+    list(key = "banana", text = "Banana"),
+    list(key = "-", text = "Vegetables", itemType = DropdownMenuItemType("Header")),
+    list(key = "broccoli", text = "Broccoli"),
+    list(key = "carrot", text = "Carrot")
+  )
+)
+```
+
+## Minimal Reprex Code
+
+```{r}
+#| eval: false
+library(shiny)
+library(shiny.fluent)
+
+DropdownMenuItemType <- function(type) { # nolint
+  JS(paste0("jsmodule['@fluentui/react'].DropdownMenuItemType."), type)
+}
+
+ui <- fluentPage(
+  div(
+    style = "height: 100%; width: 50%; margin:auto",
+    Dropdown.shinyInput(
+      inputId = "dropdown",
+      label = "Group Selector",
+      multiSelect = TRUE,
+      placeholder = "Placeholder",
+      options = list(
+        list(key = "-", text = "Fruits", itemType = DropdownMenuItemType("Header")),
+        list(key = "apple", text = "Apple"),
+        list(key = "banana", text = "Banana"),
+        list(key = "-", text = "Vegetables", itemType = DropdownMenuItemType("Header")),
+        list(key = "broccoli", text = "Broccoli"),
+        list(key = "carrot", text = "Carrot")
+      )
+    )
+  )
+)
+
+server <- function(input, output, session) {
+}
+
+shinyApp(ui, server)
+
+```
+
+<p style='text-align:center'>
+  <img src='image/header-result.png' width = '50%'>
+</p>
+
+
+## Reference
+
+- <a href='https://gist.github.com/Gotfrid/76f2012280597d8b2f53705b809e9f86' target="_blank">Gotfrid's gist: **searchable_dropdown.R**</a>
