@@ -5,19 +5,23 @@ project:
 book:
   title: "aRgyle"
   author: "Jinhwan Kim"
+  favicon: 'favicon.ico'
   date: today
   chapters:
-    - index.qmd
-    - intro.qmd
-    - part: "Shiny"
-      chapters: 
-        - shiny/page.qmd
+    - part: "서론"
+      chapters:
+        - index.qmd
+        - intro.qmd
     - part: "R"
       chapters: 
         - a.qmd
+    - part: "Shiny"
+      chapters: 
+        - shiny/page.qmd
     - part: "Shiny.fluent"
       chapters:
         - shiny.fluent/dropdown.qmd
+        - shiny.fluent/download.qmd
     - part: "ggplot2"
       chapters: 
         - href: b.qmd
@@ -43,7 +47,7 @@ bibliography: references.bib
 format:
   html:
     theme: 
-    - flatly # flatly, cosmo, pulse, spacelab, united(ORANGE)
+    # - flatly # flatly, cosmo, pulse, spacelab, united(ORANGE)
     - custom.scss
 
 callout-appearance: simple

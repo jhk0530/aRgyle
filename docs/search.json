@@ -6,6 +6,7 @@
     "section": "",
     "text": "지극히 개인적인 취향을 반영한 R / Shiny / Quarto 디자인 패턴 저장소\n사용 변형은 자유, 출처는 남길 것.\nAll rights reserved by Jinhwan Kim",
     "crumbs": [
+      "서론",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>소개</span>"
     ]
   },
@@ -16,6 +17,7 @@
     "section": "2.1 아가일 패턴?",
     "text": "2.1 아가일 패턴?\n\n\n\n\n위키에 따르면, 아가일 패턴은 마름모 꼴을 연속적으로 배치한 패턴이라고 한다.\n문서에서 다루고자하는 “Shiny” 디자인 패턴과 연관이 있는 것은 아니지만, (패션) 디자인 패턴하면 떠오르기도 하고 그냥 있어보여서 문서의 이름으로 정했다.",
     "crumbs": [
+      "서론",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
     ]
   },
@@ -26,6 +28,7 @@
     "section": "2.2 디자인 패턴이란?",
     "text": "2.2 디자인 패턴이란?\n\n이 문서에서의 디자인 패턴 (Design Pattern)이란, Shiny 개발에 있어서 자주 등장하는 상황에서 효과적인 코드 모음 정도로 정의하겠다.\n당연히 개발에 정답은 없지만, Shiny를 깎아가다보면 특정 상황에서 더욱 효과적인 예시들이 있기에 이를 정리하여 궁극적으로는 Shiny 개발에 유지보수와 재사용성, 확장성 등 온갖 좋은 것들을 이 문서를 참고하여 누리기 위함이다.",
     "crumbs": [
+      "서론",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
     ]
   },
@@ -36,6 +39,7 @@
     "section": "2.3 왜 Shiny 디자인 패턴인가?",
     "text": "2.3 왜 Shiny 디자인 패턴인가?\n\nShiny는 R에서 근본된 프레임워크인 만큼, 퍼포먼스에 있어서 다른 웹 프레임워크에 비하면 아쉬움이 조금 있다.\n다행히도 Shiny의 사용 환경은 이러한 오버로드가 문제 되는 경우는 많지 않지만, 그래도 때때로 최적화를 위해 몸을 비틀어야하는 순간들도 생긴다.\n보통 JS 기반의 프레임 워크는 싱글통, 팩토리, 옵저버 등. 잘 알려진 디자인 패턴들이 있지만 Shiny는 이러한 디자인 패턴들을 적용할 수 없다는 것이 문제다.\n그래서 보다 못해 내가 개인적으로 사용하면서 아 쩔었다. 싶은 패턴들을 있어보이게 디자인 패턴이라는 이름으로 정리하여 문서로 공유하고자 한다.\n내가 만든 것들로만 구성되어 있으면 좋겠지만 아쉽게도 그러지는 않고, 일부는 내가 만든 것, 일부는 대학원 시절부터 쌓아왔던 자료들을 사용했다.",
     "crumbs": [
+      "서론",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
     ]
   },
@@ -46,6 +50,7 @@
     "section": "2.4 왜 Quarto 디자인 패턴인가?",
     "text": "2.4 왜 Quarto 디자인 패턴인가?\n\nQuarto는 Rmarkdown을 대체하기 위한 차세대 프로젝트로, posit에서 힘을 주어 개발하고 있다.\nRmarkdown에서 파생된 수많은 패키지들의 많은 기능이 추가되고 업데이트 되는 만큼 장점도 많지만 뭔가 정리가 되지 않은 사례가 많다.\n가끔 디자인적으로 혹은 여러가지 사용 과정에서 얻은 경험들을 정리하려고 한다.",
     "crumbs": [
+      "서론",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
     ]
   },
@@ -56,29 +61,30 @@
     "section": "2.5 왜 R 디자인 패턴인가?",
     "text": "2.5 왜 R 디자인 패턴인가?\n\n별 의미 없다. 사실 대체로 Shiny와 Quarto를 위한 패턴이다.\n그러나 여전히 Tidyverse를 위시한 데이터 깎기용, 모델링용 (선호하진 않지만) 주요 패턴들이 있고 여러 곳에 좋은 사례들이 저장되어 있지만 찾아보기는 어려워 정리하려고 한다.\n가능하면 Package나 Test 같은 고급 주제에 대해서도 다뤄보려고 노력하겠다.\n\n\n\n\n\n\n\n주의\n\n\n\n이 문서에서 다루는 코드 패턴들이 정답은 아니기에 참고만 하길 바란다.\nUI 패턴에 한정하지는 않는다.\n비정기적으로 업데이트 할 예정이다.\n출처가 있는 경우 (Stackoverflow 등) 표기하려고 노력하겠다.\nquarto books의 사용이 익숙하지 않기에 문서의 레이아웃은 계속 바뀔 수 있다.",
     "crumbs": [
+      "서론",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Why Design Pattern</span>"
     ]
   },
   {
     "objectID": "shiny/page.html#헤더를-설정한-코드",
     "href": "shiny/page.html#헤더를-설정한-코드",
-    "title": "3  Shiny 헤더 커스텀",
-    "section": "3.1 헤더를 설정한 코드",
-    "text": "3.1 헤더를 설정한 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  tags$head( \n    tags$head(HTML(\"&lt;title&gt;TFL Builder&lt;/title&gt;\")),\n    tags$head(tags$link(rel=\"icon\", href=\"favicon.ico\"))\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)",
+    "title": "4  Shiny 헤더 커스텀",
+    "section": "4.1 헤더를 설정한 코드",
+    "text": "4.1 헤더를 설정한 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  tags$head( \n    tags$head(HTML(\"&lt;title&gt;TFL Builder&lt;/title&gt;\")),\n    tags$head(tags$link(rel=\"icon\", href=\"favicon.ico\"))\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)",
     "crumbs": [
       "Shiny",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
     ]
   },
   {
     "objectID": "shiny/page.html#헤더를-설정하지-않는-코드",
     "href": "shiny/page.html#헤더를-설정하지-않는-코드",
-    "title": "3  Shiny 헤더 커스텀",
-    "section": "3.2 헤더를 설정하지 않는 코드",
-    "text": "3.2 헤더를 설정하지 않는 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage()\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\n\n\n\n\n\n\n\n\nFavicon 생성\n\n\n\nFavicon 생성을 위해 무료 서비스를 활용을 권장한다.",
+    "title": "4  Shiny 헤더 커스텀",
+    "section": "4.2 헤더를 설정하지 않는 코드",
+    "text": "4.2 헤더를 설정하지 않는 코드\n\nlibrary(shiny)\n\nui &lt;- fluidPage()\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)\n\n\n\n\n\n\n\n\nFavicon 생성\n\n\n\nFavicon 생성을 위해 무료 서비스를 활용을 권장한다.",
     "crumbs": [
       "Shiny",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Shiny 헤더 커스텀</span>"
     ]
   },
   {
@@ -89,7 +95,7 @@
     "text": "5.1 Dropdown Group Header\nshiny.fluent의 dropdown은 fluent UI에서 가능한 그룹 헤더를 지원하지 않음.\n\n\n\n이를 위해 2가지를 해아한다.\n\n코드를 선언\n\n\nDropdownMenuItemType &lt;- function(type) { # nolint\n  JS(paste0(\"jsmodule['@fluentui/react'].DropdownMenuItemType.\"), type)\n}\n\n\nDropdown에 itemType = DropdownMenuItemType(\"Header\") 추가\n\n\nDropdown.shinyInput(\n  inputId = ns(\"fruit\"),\n  label = \"Searchable Fruit Selector\",\n  multiSelect = TRUE,\n  placeholder = \"Placeholder\",\n  options = list(\n    list(key = \"-\", text = \"Fruits\", itemType = DropdownMenuItemType(\"Header\")),\n    list(key = \"apple\", text = \"Apple\"),\n    list(key = \"banana\", text = \"Banana\"),\n    list(key = \"-\", text = \"Vegetables\", itemType = DropdownMenuItemType(\"Header\")),\n    list(key = \"broccoli\", text = \"Broccoli\"),\n    list(key = \"carrot\", text = \"Carrot\")\n  )\n)",
     "crumbs": [
       "Shiny.fluent",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group in shiny.fluent</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group</span>"
     ]
   },
   {
@@ -100,7 +106,7 @@
     "text": "5.2 Minimal Reprex Code\n\nlibrary(shiny)\nlibrary(shiny.fluent)\n\nDropdownMenuItemType &lt;- function(type) { # nolint\n  JS(paste0(\"jsmodule['@fluentui/react'].DropdownMenuItemType.\"), type)\n}\n\nui &lt;- fluentPage(\n  div(\n    style = \"height: 100%; width: 50%; margin:auto\",\n    Dropdown.shinyInput(\n      inputId = \"dropdown\",\n      label = \"Group Selector\",\n      multiSelect = TRUE,\n      placeholder = \"Placeholder\",\n      options = list(\n        list(key = \"-\", text = \"Fruits\", itemType = DropdownMenuItemType(\"Header\")),\n        list(key = \"apple\", text = \"Apple\"),\n        list(key = \"banana\", text = \"Banana\"),\n        list(key = \"-\", text = \"Vegetables\", itemType = DropdownMenuItemType(\"Header\")),\n        list(key = \"broccoli\", text = \"Broccoli\"),\n        list(key = \"carrot\", text = \"Carrot\")\n      )\n    )\n  )\n)\n\nserver &lt;- function(input, output, session) {\n}\n\nshinyApp(ui, server)",
     "crumbs": [
       "Shiny.fluent",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group in shiny.fluent</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group</span>"
     ]
   },
   {
@@ -111,95 +117,128 @@
     "text": "5.3 Reference\n\nGotfrid’s gist: searchable_dropdown.R",
     "crumbs": [
       "Shiny.fluent",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group in shiny.fluent</span>"
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Dropdown Group</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.fluent/download.html#download-handler",
+    "href": "shiny.fluent/download.html#download-handler",
+    "title": "6  Download handler",
+    "section": "6.1 Download handler",
+    "text": "6.1 Download handler\nFluent UI는 기본적으로 File handling을 고려하지 않는다.\n없는 component를 만들어 낼 순 없기에 shiny.fluent도 마찬가지로 아직 오피셜한 downloadButton이 없다.\n한편, shiny의 기본 downloadButton은 shiny.fluent에서 사용할 경우 bootstrap 을 suppress 하기 때문에 기능은 작동하지만 미적 문제가 발생한다.\n\nlibrary(shiny)\nlibrary(shiny.fluent)\n\nui &lt;- fluentPage(\n  div(\n    style = 'margin: 10px',\n    p(\"fluentPage (shiny.fluent)\"),\n    downloadButton(\"downloadData\", \"Download\")\n  )\n)\n\nui &lt;- fluidPage(\n  div(\n    style = 'margin: 10px',\n    p(\"fluidPage (shiny)\"),\n    downloadButton(\"downloadData\", \"Download\")\n  )\n)\n\nserver &lt;- function(input, output, session) {}\n\nshinyApp(ui, server)\n\n\n \n\n이를 해결하기 위해 shiny.fluent에서 downloadButton을 사용하는 방법은 다음과 같다.\n\nshiny.fluent의 일반 버튼을 downloadButton처럼 UI에 표기\nshiny 의 DownloadButton을 추가, 이때 hidden div에 감싸서 표기\n1의 버튼을 클릭시 2의 버튼을 클릭하게 server에서 액션 설정 (shinyjs 필요)",
+    "crumbs": [
+      "Shiny.fluent",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Download handler</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.fluent/download.html#minimal-reprex-code",
+    "href": "shiny.fluent/download.html#minimal-reprex-code",
+    "title": "6  Download handler",
+    "section": "6.2 Minimal Reprex code",
+    "text": "6.2 Minimal Reprex code\n\nlibrary(shiny)\nlibrary(shiny.fluent)\nlibrary(shinyjs)\n\nui &lt;- fluentPage(\n  useShinyjs(),\n  PrimaryButton.shinyInput(\n    \"downloadButton\",\n    text = \"Download\",\n    iconProps = list(iconName = \"Download\")\n  ),\n  div(\n    style = \"visibility: hidden;\",\n    downloadButton(\"download\", label = \"\")\n  )\n)\n\nserver &lt;- function(input, output, session) {\n  observeEvent(input$downloadButton, {\n    click(\"download\")\n  })\n  \n  output$download &lt;- downloadHandler(\n    filename = function() {\n      paste(\"data-\", Sys.Date(), \".csv\", sep=\"\")\n    },\n    content = function(file) {\n      write.csv(iris, file)\n    }\n  )\n}\n\nshinyApp(ui, server)",
+    "crumbs": [
+      "Shiny.fluent",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Download handler</span>"
+    ]
+  },
+  {
+    "objectID": "shiny.fluent/download.html#reference",
+    "href": "shiny.fluent/download.html#reference",
+    "title": "6  Download handler",
+    "section": "6.3 Reference",
+    "text": "6.3 Reference\n\njakubsob’s solution",
+    "crumbs": [
+      "Shiny.fluent",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Download handler</span>"
     ]
   },
   {
     "objectID": "quarto/callout.html#callout",
     "href": "quarto/callout.html#callout",
-    "title": "7  Callout Blocks",
-    "section": "7.1 Callout",
-    "text": "7.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title=\"tip\" appearance=\"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title=\"warning\" appearance=\"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n7.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n7.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n7.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n7.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n7.1.5 icon\n\n기본값은 true니까 건드리지 말자",
+    "title": "8  Callout Blocks",
+    "section": "8.1 Callout",
+    "text": "8.1 Callout\n\nQuarto에서 애용하는 패턴 중 하나이다.\n특정 문장을 강조하고 싶을 때 사용한다.\n아래 것을 복붙해서 쓰자\n\n::: {.callout-tip title=\"tip\" appearance=\"simple\"}            \n애옹\n:::\n\n::: {.callout-warning title=\"warning\" appearance=\"simple\"}            \n애옹\n:::\n\nXXX: — \"note\", \"warning\", \"important\", \"tip\", \"caution\"\ncollapse: — 접을지 (\"true\", \"false\")\ntitle: — 제목\nappearance: — 디자인 (\"default\", \"simple\", \"minimal\")\nicon: — 아이콘 (\"true\", \"false\")\n\n\n8.1.1 XXX\n\n원래는 Type이 더 적합한 설명 같다.\n뒤의 아이콘을 활용하지 않기로 하면, 사실상 색상을 쓰기 위한 용도.\nnote: 파랑, warning: 주황, important: 빨강, tip: 초록, caution: 노랑\n취향에 따라 다르지만 tip과 warning을 권장.\n\n\n\n8.1.2 Collapse\n\ncollapse에 값을 지정하지 않으면 접능 기능 자체가 안 생긴다.\n상황에 따라 접을 수 있도록 하고 싶을 때는 collapse=\"true\" 또는 collapse=\"false\"를 지정한다.\n문제와 답을 보여줄 때 정도를 제외하면 사용하지 않는 것이 좋다. (기본값)\n\n\n\n\n\n\n\ncollapse false\n\n\n\n\n\n애옹\n\n\n\n\n\n\n\n\n\ncollapse NONE\n\n\n\n애옹\n\n\n\n\n8.1.3 title\n\n제목으로, 없어도 크게 무리는 없지만, 귀찮더라도 쓰자.\n\n\n\n\n\n\n\n제목\n\n\n\n애옹\n\n\n\n\n\n\n\n\n애옹\n\n\n\n\n\n8.1.4 appearance\n\ndefault: 기본 값\nsimple: 헤더를 없엔 디자인\nminimal: 아이콘과 헤더를 없앤 디자인\nsimple을 권장\n\n\n\n\n\n\n\ndefault\n\n\n\n애옹\n\n\n\n\n\n\n\n\ndefault & icon = false\n\n\n\n애옹\n\n\n\n\n\n\n\n\nsimple\n\n\n\n애옹\n\n\n\n\n\n\n\n\nminimal\n\n\n\n애옹\n\n\n\n\n8.1.5 icon\n\n기본값은 true니까 건드리지 말자",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Callout Blocks</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Callout Blocks</span>"
     ]
   },
   {
     "objectID": "quarto/callout.html#reference",
     "href": "quarto/callout.html#reference",
-    "title": "7  Callout Blocks",
-    "section": "7.2 Reference",
-    "text": "7.2 Reference\n\nCallout Blocks (Quarto 2023)\n\n\n\n\n\nQuarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
+    "title": "8  Callout Blocks",
+    "section": "8.2 Reference",
+    "text": "8.2 Reference\n\nCallout Blocks (Quarto 2023)\n\n\n\n\n\nQuarto. 2023. “Callout Blocks.” https://quarto.org/docs/authoring/callouts.html.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Callout Blocks</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Callout Blocks</span>"
     ]
   },
   {
     "objectID": "quarto/scss.html#yaml",
     "href": "quarto/scss.html#yaml",
-    "title": "8  Custom CSS",
-    "section": "8.1 YAML",
-    "text": "8.1 YAML\n이를 위해 yaml 헤더에 다음과 같이 추가한다\n\ncustoms.scss의 위치는 작성하는 qmd 파일과 동일한 것을 적용한다.\n만약 전체에 일괄적으로 적용하고 싶다면, _quarto.yml에 추가한다. 마찬가지로 위치는 _quarto.yml과 동일해야한다.\n\ntheme:\n  - custom.scss\ncustom.scss의 내용은 아래와 같이 일반 css를 채우면 된다, 이때 반드시 첫째줄의 rules를 추가해야한다.\n/*-- scss:rules --*/\ncode{\n  ...\n}\n\np{\n  ...\n}\n\n\n\n\n\n\nSCSS\n\n\n\n기본 테마를 사용하는 것이 좋고, 기본 테마에서 특정 부분만 수정하고 싶을때 사용하자.",
+    "title": "9  Custom CSS",
+    "section": "9.1 YAML",
+    "text": "9.1 YAML\n이를 위해 yaml 헤더에 다음과 같이 추가한다\n\ncustoms.scss의 위치는 작성하는 qmd 파일과 동일한 것을 적용한다.\n만약 전체에 일괄적으로 적용하고 싶다면, _quarto.yml에 추가한다. 마찬가지로 위치는 _quarto.yml과 동일해야한다.\n\ntheme:\n  - custom.scss\ncustom.scss의 내용은 아래와 같이 일반 css를 채우면 된다, 이때 반드시 첫째줄의 rules를 추가해야한다.\n/*-- scss:rules --*/\ncode{\n  ...\n}\n\np{\n  ...\n}\n\n\n\n\n\n\nSCSS\n\n\n\n기본 테마를 사용하는 것이 좋고, 기본 테마에서 특정 부분만 수정하고 싶을때 사용하자.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Custom CSS</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Custom CSS</span>"
     ]
   },
   {
     "objectID": "quarto/image.html#이미지-크기가-큰-경우",
     "href": "quarto/image.html#이미지-크기가-큰-경우",
-    "title": "9  image 배치",
-    "section": "9.1 이미지 크기가 큰 경우",
-    "text": "9.1 이미지 크기가 큰 경우\n&lt;img src='...' width = '100%'&gt;",
+    "title": "10  image 배치",
+    "section": "10.1 이미지 크기가 큰 경우",
+    "text": "10.1 이미지 크기가 큰 경우\n&lt;img src='...' width = '100%'&gt;",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>image 배치</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>image 배치</span>"
     ]
   },
   {
     "objectID": "quarto/image.html#이미지-크기가-작은-경우",
     "href": "quarto/image.html#이미지-크기가-작은-경우",
-    "title": "9  image 배치",
-    "section": "9.2 이미지 크기가 작은 경우",
-    "text": "9.2 이미지 크기가 작은 경우\n\np 태그를 사용하여 중앙 정렬 이후 크기를 줄인다. (가끔 text-align이 아닌 align을 사용해야하는 경우도 있다.)\n\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width = '50%'&gt;\n&lt;/p&gt;",
+    "title": "10  image 배치",
+    "section": "10.2 이미지 크기가 작은 경우",
+    "text": "10.2 이미지 크기가 작은 경우\n\np 태그를 사용하여 중앙 정렬 이후 크기를 줄인다. (가끔 text-align이 아닌 align을 사용해야하는 경우도 있다.)\n\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width = '50%'&gt;\n&lt;/p&gt;",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>image 배치</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>image 배치</span>"
     ]
   },
   {
     "objectID": "quarto/image.html#이미지가-여러개-있는-경우",
     "href": "quarto/image.html#이미지가-여러개-있는-경우",
-    "title": "9  image 배치",
-    "section": "9.3 이미지가 여러개 있는 경우",
-    "text": "9.3 이미지가 여러개 있는 경우\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width='49%'&gt;\n  &lt;img src='...' width='49%'&gt;\n&lt;/p&gt;\n\n \n\n\n\n\n\n\n\n49%인 이유\n\n\n\nquarto 에서의 이미지 배치는 margin을 포함하는 경우가 있어 50/50 처럼 꽉차게 배치하면 아래 예시처럼 다음줄로 넘어간다. 적절히 여유를 주자.",
+    "title": "10  image 배치",
+    "section": "10.3 이미지가 여러개 있는 경우",
+    "text": "10.3 이미지가 여러개 있는 경우\n&lt;p style='text-align:center'&gt;\n  &lt;img src='...' width='49%'&gt;\n  &lt;img src='...' width='49%'&gt;\n&lt;/p&gt;\n\n \n\n\n\n\n\n\n\n49%인 이유\n\n\n\nquarto 에서의 이미지 배치는 margin을 포함하는 경우가 있어 50/50 처럼 꽉차게 배치하면 아래 예시처럼 다음줄로 넘어간다. 적절히 여유를 주자.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>image 배치</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>image 배치</span>"
     ]
   },
   {
     "objectID": "quarto/citation.html#footnote",
     "href": "quarto/citation.html#footnote",
-    "title": "10  Citation",
-    "section": "10.1 Footnote",
-    "text": "10.1 Footnote\n\n아래 예시를 복붙하여 사용한다.\n\n이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]\n이렇게 인라인으로 쓰자1",
+    "title": "11  Citation",
+    "section": "11.1 Footnote",
+    "text": "11.1 Footnote\n\n아래 예시를 복붙하여 사용한다.\n\n이렇게 인라인으로 쓰자^[괜히 Longnote, 숫자 쓰는 FootNote 쓰면 더 헷갈린다]\n이렇게 인라인으로 쓰자1",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Citation</span>"
     ]
   },
   {
     "objectID": "quarto/citation.html#citation",
     "href": "quarto/citation.html#citation",
-    "title": "10  Citation",
-    "section": "10.2 Citation",
-    "text": "10.2 Citation\n\nQuarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.\n일반적으로 사용하는 문서의 경우 출처는 (링크) 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다.\n단계가 조금 복잡하다.\n\n\n10.2.1 _quarto.yml 설정\n\n_quarto.yml 파일에 아래와 같이 references.bib를 추가한다. (tab-level: 0)\n\nbibliography: references.bib\n\n\n10.2.2 references.qmd 파일 작성\n\n한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다.\n\n\n\n\n\n\n\nr-efs가 아닌 refs !!\n\n\n\n아래에서 #r-efs를 #refs로 바꿔야 한다.\n일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.\n\n\n# References {.unnumbered}\n::: {#r-efs}\n:::\n\n\n10.2.3 references.bib 파일 작성\n\n아래는 quarto books template에서 제공하는 예시이다.(Quarto 2023b)\n\n@article{knuth84,\n  author = {Knuth, Donald E.},\n  title = {Literate Programming},\n  year = {1984},\n  issue_date = {May 1984},\n  publisher = {Oxford University Press, Inc.},\n  address = {USA},\n  volume = {27},\n  number = {2},\n  issn = {0010-4620},\n  url = {https://doi.org/10.1093/comjnl/27.2.97},\n  doi = {10.1093/comjnl/27.2.97},\n  journal = {Comput. J.},\n  month = may,\n  pages = {97–111},\n  numpages = {15}\n}\n\n만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.\n\n@article{quarto-callout,\n  author = {Quarto},\n  title = {Callout Blocks},\n  year = {2023},\n  url ={https://quarto.org/docs/authoring/callouts.html}\n}\n\n\n10.2.4 원본 qmd 파일에 reference 추가\n\n아래와 같이 작성하면 된다.(Quarto 2023a)\n\n## Reference\n\n- Callout Blocks [@quarto-callout]\n\n\n\n\n\n\n@-tag\n\n\n\n\"[@quarto-callout]\" 처럼 인용을 할 수 있고, 여기서 표기한 @ 뒤의 글자는 references.bib의 각 항목마다 첫 줄에서 사용된 키워드이다.\n\n\n\n\n\n\nQuarto. 2023a. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023b. “Creating a Book.” https://quarto.org/docs/books/.",
+    "title": "11  Citation",
+    "section": "11.2 Citation",
+    "text": "11.2 Citation\n\nQuarto에서 외부 자료에 대한 출처를 명시하고 싶을때 사용하는 패턴이다.\n일반적으로 사용하는 문서의 경우 출처는 (링크) 정도로 작성해도 큰 문제가 없지만, 논문이나 도서와 같이 학술적인 목적을 갖는다면 작성하는 것이 좋다.\n단계가 조금 복잡하다.\n\n\n11.2.1 _quarto.yml 설정\n\n_quarto.yml 파일에 아래와 같이 references.bib를 추가한다. (tab-level: 0)\n\nbibliography: references.bib\n\n\n11.2.2 references.qmd 파일 작성\n\n한번 작성해두면 알아서 quarto 에서 업데이트 하기 때문에 그대로 사용해도 좋다.\n\n\n\n\n\n\n\nr-efs가 아닌 refs !!\n\n\n\n아래에서 #r-efs를 #refs로 바꿔야 한다.\n일반 markdown임에도 refs를 인식하여 이 페이지를 Reference로 인식하기 때문이다.\n\n\n# References {.unnumbered}\n::: {#r-efs}\n:::\n\n\n11.2.3 references.bib 파일 작성\n\n아래는 quarto books template에서 제공하는 예시이다.(Quarto 2023b)\n\n@article{knuth84,\n  author = {Knuth, Donald E.},\n  title = {Literate Programming},\n  year = {1984},\n  issue_date = {May 1984},\n  publisher = {Oxford University Press, Inc.},\n  address = {USA},\n  volume = {27},\n  number = {2},\n  issn = {0010-4620},\n  url = {https://doi.org/10.1093/comjnl/27.2.97},\n  doi = {10.1093/comjnl/27.2.97},\n  journal = {Comput. J.},\n  month = may,\n  pages = {97–111},\n  numpages = {15}\n}\n\n만약 ISBN 같은 것이 없는 인터넷 아티클이라면 아래처럼 작성할 수 있다.\n\n@article{quarto-callout,\n  author = {Quarto},\n  title = {Callout Blocks},\n  year = {2023},\n  url ={https://quarto.org/docs/authoring/callouts.html}\n}\n\n\n11.2.4 원본 qmd 파일에 reference 추가\n\n아래와 같이 작성하면 된다.(Quarto 2023a)\n\n## Reference\n\n- Callout Blocks [@quarto-callout]\n\n\n\n\n\n\n@-tag\n\n\n\n\"[@quarto-callout]\" 처럼 인용을 할 수 있고, 여기서 표기한 @ 뒤의 글자는 references.bib의 각 항목마다 첫 줄에서 사용된 키워드이다.\n\n\n\n\n\n\nQuarto. 2023a. “Citations & Footnotes.” https://quarto.org/docs/authoring/footnotes-and-citations.html.\n\n\n———. 2023b. “Creating a Book.” https://quarto.org/docs/books/.",
     "crumbs": [
       "Quarto",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Citation</span>"
     ]
   },
   {

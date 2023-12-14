@@ -1,0 +1,96 @@
+---
+title: "Download handler" 
+---
+
+## Download handler
+
+Fluent UI는 기본적으로 File handling을 고려하지 않는다. 
+
+없는 component를 만들어 낼 순 없기에 shiny.fluent도 마찬가지로 아직 오피셜한 downloadButton이 없다.
+
+한편, shiny의 기본 downloadButton은 shiny.fluent에서 사용할 경우 bootstrap 을 suppress 하기 때문에 기능은 작동하지만 미적 문제가 발생한다.
+
+```{r}
+#| eval: false
+library(shiny)
+library(shiny.fluent)
+
+ui <- fluentPage(
+  div(
+    style = 'margin: 10px',
+    p("fluentPage (shiny.fluent)"),
+    downloadButton("downloadData", "Download")
+  )
+)
+
+ui <- fluidPage(
+  div(
+    style = 'margin: 10px',
+    p("fluidPage (shiny)"),
+    downloadButton("downloadData", "Download")
+  )
+)
+
+server <- function(input, output, session) {}
+
+shinyApp(ui, server)
+```
+
+<p style='text-align:center'>
+  <img src='image/dl-fluent.png' width='49%'>
+  <img src='image/dl-shiny.png' width='49%'>
+</p>
+
+이를 해결하기 위해 shiny.fluent에서 downloadButton을 사용하는 방법은 다음과 같다.
+
+1. shiny.fluent의 일반 버튼을 downloadButton처럼 UI에 표기
+
+2. shiny 의 DownloadButton을 추가, 이때 hidden div에 감싸서 표기
+
+3. 1의 버튼을 클릭시 2의 버튼을 클릭하게 server에서 액션 설정 (`shinyjs` 필요)
+
+
+## Minimal Reprex code
+
+```{r}
+#| eval: false
+
+library(shiny)
+library(shiny.fluent)
+library(shinyjs)
+
+ui <- fluentPage(
+  useShinyjs(),
+  PrimaryButton.shinyInput(
+    "downloadButton",
+    text = "Download",
+    iconProps = list(iconName = "Download")
+  ),
+  div(
+    style = "visibility: hidden;",
+    downloadButton("download", label = "")
+  )
+)
+
+server <- function(input, output, session) {
+  observeEvent(input$downloadButton, {
+    click("download")
+  })
+  
+  output$download <- downloadHandler(
+    filename = function() {
+      paste("data-", Sys.Date(), ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(iris, file)
+    }
+  )
+}
+
+shinyApp(ui, server)
+
+```
+
+## Reference
+
+- <a href='https://github.com/Appsilon/shiny.fluent/issues/39#issuecomment-845228813' target="_blank">**jakubsob's solution**</a>
